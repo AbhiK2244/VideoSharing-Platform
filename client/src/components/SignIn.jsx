@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loginFailure, loginStart, loginSuccess} from '../redux/channel/channelSlice.js';
 import { useNavigate } from 'react-router-dom';
 import { auth, provider } from '../firebase.js';
-import { signInWithPopup, signInWithRedirect } from 'firebase/auth';
+import { signInWithPopup } from 'firebase/auth';
 import { FaGoogle } from 'react-icons/fa';
 
 const SignIn = () => {
@@ -75,7 +75,7 @@ const SignIn = () => {
     const signInWithGoogle = async() => {
       try{
         dispatch(loginStart())
-        const result = await signInWithRedirect(auth, provider);
+        const result = await signInWithPopup(auth, provider);
         console.log("result", result.user)
         const name = result.user.displayName;
         const email = result.user.email;
