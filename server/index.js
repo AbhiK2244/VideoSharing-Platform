@@ -23,7 +23,7 @@ mongoose.connect(process.env.DB_CONNECTION_STRING).then(()=>{
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://video-sharing-client.vercel.app',
     methods: ["POST", "GET", "DELETE", "PUT", "OPTIONS"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"]                 // Allow cookies to be sent
