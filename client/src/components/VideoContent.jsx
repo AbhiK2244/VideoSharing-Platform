@@ -122,7 +122,7 @@ const VideoContainer = () => {
 
       {recco && <div className='recommendation w-2/6 hidden md:block'>
       {/* {cards.map((card) => <Card key={card._id} type="rec" card={card}/>)} */}
-        <Recommendations tags={currentVideo.tags} setRecco={setRecco}/>
+        <Recommendations tags={currentVideo?.tags} setRecco={setRecco}/>
       </div>}
     </div>
   )
