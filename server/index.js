@@ -26,7 +26,7 @@ app.use(cors({
     origin: 'https://video-sharing-client.vercel.app',
     methods: ["POST", "GET", "DELETE", "PUT", "OPTIONS"],
     credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization"]                 // Allow cookies to be sent
+    allowedHeaders: ["Content-Type", "Authorization", "Cookie"]  
 }))
 
 app.use("/api/users", UserRoutes);

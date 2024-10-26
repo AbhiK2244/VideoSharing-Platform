@@ -67,8 +67,9 @@ export const signin = async(req, res, next) => {
             //sending this cookie to client browser for future use
             res.cookie("access_token", token, {
                 //adding cofiguration for more security
-                httpOnly:true,
-                sameSite: 'Lax',
+                httpOnly: true,
+                secure: true, // Ensure this is set for Vercel in production
+                sameSite: 'None'
             }).status(200).json(other);
         } 
     }
@@ -103,8 +104,9 @@ export const googleAuth = async (req, res, next) => {
 
             res.cookie("access_token", token, {
                 //adding cofiguration for more security
-                httpOnly:true,
-                sameSite: 'Lax',
+                httpOnly: true,
+                secure: true, // Ensure this is set for Vercel in production
+                sameSite: 'None'
             }).status(200).json(savedUser._doc);
         }
 
